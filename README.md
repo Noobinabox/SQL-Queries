@@ -1,1 +1,1 @@
-# SQL-Queries
+# SQL Query Collection
