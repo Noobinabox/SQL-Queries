@@ -4,7 +4,7 @@ Here are all my DMV, or DMOs, queries that I have wrote/collected over the years
 * [Advanced sp_who2](#Advanced-sp_who2)
 * [Current Locks in Database](#Current-Locks-in-Database)
 * [IO Bottlenecks](#IO-Bottlenecks)
-* 
+* [Current Thread Waits](#Current-Thread-Wait)
 
 #### [Advanced sp_who2](/Advanced%20sp_who2.sql)
 This script gives you detailed information much like `sp_who2` but includes both the SQL Text and execution plan. If you wanted to tie more DMVs to it that could easily be done.
@@ -15,4 +15,4 @@ This query utilizes sys.dm_tran_locks, sys.dm_exec_sessions, and sys.dm_exec_sql
 #### [IO Bottlenecks](/IO%20Bottleneck.sql)
 The results of this script will display all physical data files and logs with their i/o stall reads, writes, stalls, and more information about disk i/o. 
 
-#### Current Thread Wait
+#### [Current Thread Wait](/Current%20Thread%20Wait.sql)
