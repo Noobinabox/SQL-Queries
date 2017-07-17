@@ -1,3 +1,18 @@
+/*****************************************************************************************
+** File:	sp_partition_information.sql
+** Name:	Get Information on Partitions
+** Desc:	Creates a stored procedure to get information on a table's partition
+** Auth:	Seth Lyon
+** Date:	Oct 21, 2015
+********************************************************
+** Change History
+********************************************************
+** PR	Date		Author			Description	
+** --	----------	------------	------------------------------------
+** 1	10/21/2015	Seth Lyon		Created
+*****************************************************************************************/
+
+
 CREATE PROCEDURE PartitionInformation
 	@TableName  nvarchar(200)
 AS
@@ -44,3 +59,4 @@ BEGIN
 			 AND o.object_id = OBJECT_ID(@TableName);
 END
 GO
+

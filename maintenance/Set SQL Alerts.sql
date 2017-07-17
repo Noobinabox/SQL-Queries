@@ -1,9 +1,28 @@
+/*****************************************************************************************
+** File:	set_sql_alerts.sql
+** Name:	Set SQL Alerts
+** Desc:	Goes through all your default alerts and sends an email to operator DB Notifications
+** Auth:	Seth Lyon
+** Date:	Oct 21, 2015
+********************************************************
+** Change History
+********************************************************
+** PR	Date		Author			Description	
+** --	----------	------------	------------------------------------
+** 1	10/21/2015	Seth Lyon		Created
+*****************************************************************************************/
+
+
 PRINT ''
 PRINT 'Installing default alerts and Level 24 Errors...'
 GO
  
 USE [msdb]
 GO
+
+--<summary>
+--	This section just checks if the alerts current exist and deletes them.
+--</summary>
  
 /****** Object:  Alert [Full msdb log]    ******/
 IF  EXISTS (SELECT name FROM msdb.dbo.sysalerts WHERE name = N'Full msdb log')
@@ -106,6 +125,12 @@ GO
 
 USE [msdb]
 GO
+
+
+--<summary>
+--	Here we are creating the alert and assigning the message_id. Make sure to replace @operator_name with your actual
+--  operator name.
+--</summary>
  
 /****** Object:  Alert [Full msdb log]******/
 EXEC msdb.dbo.sp_add_alert @name=N'Full msdb log',
@@ -358,6 +383,8 @@ GO
 PRINT ''
 PRINT 'Completed.'
  
--- List the default alerts
+--<summary>
+--	Display all alerts setup on the server.
+--</summary>
 EXECUTE msdb.dbo.sp_help_alert;
 GO

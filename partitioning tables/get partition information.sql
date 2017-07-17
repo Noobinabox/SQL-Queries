@@ -12,7 +12,7 @@
 ** 1	10/21/2015	Seth Lyon		Created
 *****************************************************************************************/
 
-DECLARE @TableName NVARCHAR(200) = N'Production.TransactionHistory'
+DECLARE @TableName NVARCHAR(200) = N'Production.TransactionHistory' --Change this to whatever table name you would like to check.
  
 SELECT SCHEMA_NAME(o.schema_id) + '.' + OBJECT_NAME(i.object_id) AS [object]
      , p.partition_number AS [p#]
@@ -51,3 +51,4 @@ LEFT OUTER JOIN sys.partition_range_values rv
 WHERE i.index_id < 2
      AND o.object_id = OBJECT_ID(@TableName)
 ORDER BY [p#] ASC
+

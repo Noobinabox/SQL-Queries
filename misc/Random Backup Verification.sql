@@ -39,8 +39,14 @@ PRINT 'Getting all full database backups in the last 24 hours.';
 
 SELECT @randNumberHigh = COUNT(*) FROM #BackupSet;
 
+--<summary>
+--	If we don't find any backups within the last 24 hours disconnect and send an error
+--</summary>
 IF @randNumberHigh = 0
+BEGIN
 	raiserror('No database backups recorded in 24 hours.',20,-1) with log
+	PRINT @@SERVERNAME;
+END
 
 SELECT @randDBindex = FLOOR(RAND()*(@randNumberHigh+1-1)+1);
 

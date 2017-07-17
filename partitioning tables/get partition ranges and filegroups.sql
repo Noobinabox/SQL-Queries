@@ -38,3 +38,4 @@ LEFT JOIN sys.partition_range_values AS r ON
 	(f.function_id = r.function_id and r.boundary_id = p.partition_number)
 WHERE 
 	(t.name = '{TableNameHere}') and (i.index_id IN (0,1))
+
