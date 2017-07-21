@@ -12,7 +12,7 @@
 ** 1	2/24/2016	Seth Lyon		Created
 ** 2	2/25/2016	Seth Lyon		Added DatabaseInformation table
 ** 3	2/29/2016	Seth Lyon		Fixed constraints for default values
-** 4    7/17/2017   Seth Lyon       Added Indexes and comments
+** 4    7/17/2017	Seth Lyon		Added Indexes and comments
 *****************************************************************************************/
 
 CREATE DATABASE [sfmcsyadmin]
