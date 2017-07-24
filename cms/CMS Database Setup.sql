@@ -12,7 +12,7 @@
 ** 1	2/24/2016	Seth Lyon		Created
 ** 2	2/25/2016	Seth Lyon		Added DatabaseInformation table
 ** 3	2/29/2016	Seth Lyon		Fixed constraints for default values
-** 4    7/17/2017   Seth Lyon       Added Indexes and comments
+** 4    7/17/2017	Seth Lyon		Added Indexes and comments
 *****************************************************************************************/
 
 CREATE DATABASE [MSSQLMaintenance]
@@ -78,8 +78,8 @@ CREATE TABLE BackupMaintenance
 	[DatabaseName] NVARCHAR(130) NOT NULL,
 	[BackupType] NVARCHAR(20) NOT NULL,
 	[Command] NVARCHAR(1000) NOT NULL,
-    [BackupSizeMB] DECIMAL(9,2) NULL CONSTRAINT [DF_BackupMaintenance_BackupSize] DEFAULT 0.00,
-    [CompressedBackupSizeMB] DECIMAL(9,2) NULL CONSTRAINT [DF_BackupMaintenance_CompressedBackupSize] DEFAULT 0.00,
+    	[BackupSizeMB] DECIMAL(9,2) NULL CONSTRAINT [DF_BackupMaintenance_BackupSize] DEFAULT 0.00,
+   	[CompressedBackupSizeMB] DECIMAL(9,2) NULL CONSTRAINT [DF_BackupMaintenance_CompressedBackupSize] DEFAULT 0.00,
 	[FilePath] NVARCHAR(1000) NOT NULL,
 	[Successful] BIT CONSTRAINT [DF_BackupMaintenance_Successful] DEFAULT 1,
 	[StartTime] DATETIME NOT NULL,
