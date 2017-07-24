@@ -15,11 +15,11 @@
 ** 4    7/17/2017   Seth Lyon       Added Indexes and comments
 *****************************************************************************************/
 
-CREATE DATABASE [sfmcsyadmin]
+CREATE DATABASE [MSSQLMaintenance]
 GO
 
 
-USE [sfmcsysadmin]
+USE [MSSQLMaintenance]
 GO
 
 
