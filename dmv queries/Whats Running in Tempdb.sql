@@ -1,3 +1,18 @@
+/*****************************************************************************************
+** File:	whats_in_tempdb.sql
+** Name:	What's Running in Tempdb
+** Desc:	Gives you a detailed view of what's running in tempdb and allocated
+**              resources
+** Auth:	Seth Lyon
+** Date:	Aug 9, 2017
+********************************************************
+** Change History
+********************************************************
+** PR	Date		Author			Description	
+** --	----------	------------	------------------------------------
+** 1	8/9/2017	Seth Lyon		Created
+*****************************************************************************************/
+
 SELECT
     des.session_id AS [SESSION ID],
     DB_NAME(ddssu.database_id) AS [DATABASE Name],
